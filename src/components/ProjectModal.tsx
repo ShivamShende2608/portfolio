@@ -24,13 +24,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+            className="bg-[#0f172a] text-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 text-white" />
             </button>
 
             <div className="aspect-video w-full">
@@ -42,14 +42,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             </div>
 
             <div className="p-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
+              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+              <p className="text-gray-300 mb-4">{project.description}</p>
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm"
+                    className="px-3 py-1 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full text-sm"
                   >
                     {tech}
                   </span>
@@ -60,22 +60,22 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 <div className="space-y-6">
                   {project.details.problem && (
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Problem</h4>
-                      <p className="text-gray-600">{project.details.problem}</p>
+                      <h4 className="text-lg font-semibold mb-2">Problem</h4>
+                      <p className="text-gray-300">{project.details.problem}</p>
                     </div>
                   )}
 
                   {project.details.solution && (
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Solution</h4>
-                      <p className="text-gray-600">{project.details.solution}</p>
+                      <h4 className="text-lg font-semibold mb-2">Solution</h4>
+                      <p className="text-gray-300">{project.details.solution}</p>
                     </div>
                   )}
 
                   {project.details.features && (
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Key Features</h4>
-                      <ul className="list-disc list-inside space-y-1 text-gray-600">
+                      <h4 className="text-lg font-semibold mb-2">Key Features</h4>
+                      <ul className="list-disc list-inside space-y-1 text-gray-300">
                         {project.details.features.map((feature, index) => (
                           <li key={index}>{feature}</li>
                         ))}
@@ -85,14 +85,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
                   {project.details.impact && (
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Impact</h4>
-                      <p className="text-gray-600">{project.details.impact}</p>
+                      <h4 className="text-lg font-semibold mb-2">Impact</h4>
+                      <p className="text-gray-300">{project.details.impact}</p>
                     </div>
                   )}
                 </div>
               )}
 
-              <div className="flex gap-4 mt-6 pt-6 border-t">
+              <div className="flex gap-4 mt-6 pt-6 border-t border-gray-600">
                 <a
                   href={project.github}
                   target="_blank"
@@ -106,7 +106,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg hover:opacity-90 transition-opacity"
                 >
                   <ExternalLink className="w-5 h-5" />
                   Live Demo

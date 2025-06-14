@@ -7,6 +7,7 @@ export default {
         'gradient-x': 'gradient-x 15s ease infinite',
         'gradient-y': 'gradient-y 15s ease infinite',
         'gradient-xy': 'gradient-xy 15s ease infinite',
+        'border-flow': 'border-flow 6s ease infinite', // 🔥 New flowing border animation
       },
       keyframes: {
         'gradient-y': {
@@ -38,7 +39,13 @@ export default {
             'background-size': '200% 200%',
             'background-position': 'right center'
           }
-        }
+        },
+        // ✅ New keyframes for animated border
+        'border-flow': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       }
     },
   },

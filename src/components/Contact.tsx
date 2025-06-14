@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
@@ -16,10 +16,10 @@ export default function Contact() {
     try {
       setIsSubmitting(true);
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        'YOUR_PUBLIC_KEY'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       toast.success('Message sent successfully!');
       formRef.current.reset();
@@ -31,11 +31,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="contact" className="py-20 bg-[#0f172a]">
       <Toaster position="top-right" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
+          className="relative text-3xl md:text-4xl font-bold text-center text-white mb-16 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-[3px] after:w-40 after:rounded-full after:bg-gradient-to-r after:from-[#1E90FF] after:via-[#00BFFF] after:to-[#1E90FF]"
           variants={fadeInUp}
           initial="initial"
           whileInView="animate"
@@ -56,8 +56,8 @@ export default function Contact() {
             className="space-y-8"
             variants={fadeInUp}
           >
-            <h3 className="text-2xl font-bold text-gray-900">Let's talk about everything!</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl font-bold text-white">Let's talk about everything!</h3>
+            <p className="text-gray-300">
               Feel free to reach out for collaborations, opportunities, or just a friendly chat.
             </p>
             
@@ -66,12 +66,12 @@ export default function Contact() {
                 className="flex items-center space-x-4"
                 whileHover={{ x: 10 }}
               >
-                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-800 to-blue-600/30 rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-blue-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Email</p>
-                  <p className="text-gray-900 font-medium">contact@roadsidecoder.com</p>
+                  <p className="text-sm text-gray-400">Email</p>
+                  <p className="text-white font-medium">shivamshende2608@gmail.com</p>
                 </div>
               </motion.div>
               
@@ -79,12 +79,12 @@ export default function Contact() {
                 className="flex items-center space-x-4"
                 whileHover={{ x: 10 }}
               >
-                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-800 to-blue-600/30 rounded-full flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-blue-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Location</p>
-                  <p className="text-gray-900 font-medium">Bangalore, India</p>
+                  <p className="text-sm text-gray-400">Location</p>
+                  <p className="text-white font-medium">Nagpur, India</p>
                 </div>
               </motion.div>
             </div>
@@ -98,33 +98,33 @@ export default function Contact() {
             variants={fadeInUp}
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-200">
                 Name
               </label>
               <input
                 type="text"
-                name="user_name"
+                name="name"
                 id="name"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md bg-slate-800 border border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-200">
                 Email
               </label>
               <input
                 type="email"
-                name="user_email"
+                name="email"
                 id="email"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md bg-slate-800 border border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-200">
                 Message
               </label>
               <textarea
@@ -132,14 +132,14 @@ export default function Contact() {
                 name="message"
                 rows={4}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md bg-slate-800 border border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
             
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 px-8 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-md hover:from-blue-800 hover:to-blue-600 transition-colors disabled:opacity-50"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

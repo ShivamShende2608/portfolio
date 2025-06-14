@@ -6,50 +6,82 @@ const skills = [
   {
     category: 'Frontend Development',
     icon: Globe,
-    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux'],
+    skills: [
+      { name: 'HTML', icon: '/icons/html.png' },
+      { name: 'CSS', icon: '/icons/css.png' },
+      { name: 'React', icon: '/icons/react.png' },
+      { name: 'Tailwind CSS', icon: '/icons/tailwind.png' },
+    ],
   },
   {
     category: 'Backend Development',
     icon: Server,
-    skills: ['Node.js', 'Express', 'Python', 'Django', 'REST APIs'],
+    skills: [
+      { name: 'Node.js', icon: '/icons/node.png' },
+      { name: 'Express.js', icon: '/icons/express.png' },
+      { name: 'Django', icon: '/icons/django.png' },
+      { name: 'REST API', icon: '/icons/api.png' },
+    ],
   },
   {
     category: 'Database',
     icon: Database,
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Firebase'],
+    skills: [
+      { name: 'MongoDB', icon: '/icons/mongodb.png' },
+      { name: 'Firebase', icon: '/icons/firebase.png' },
+      { name: 'Convex', icon: '/icons/convex.png' },
+    ],
   },
   {
-    category: 'DevOps',
+    category: 'DevOps & Tools',
     icon: Terminal,
-    skills: ['Docker', 'AWS', 'CI/CD', 'Linux', 'Git'],
+    skills: [
+      { name: 'Git', icon: '/icons/git.png' },
+      { name: 'GitHub', icon: '/icons/github.png' },
+      { name: 'Netlify', icon: '/icons/netlify.png' },
+      { name: 'Vercel', icon: '/icons/Vercel.png' },
+    ],
   },
   {
     category: 'Programming Languages',
     icon: Code,
-    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'SQL'],
+    skills: [
+      { name: 'C++', icon: '/icons/cpp.png' },
+      { name: 'Python', icon: '/icons/python.png' },
+      { name: 'JavaScript', icon: '/icons/js.png' },
+    ],
   },
   {
-    category: 'Design',
+    category: 'Soft Skills',
     icon: Palette,
-    skills: ['Figma', 'Adobe XD', 'UI/UX', 'Responsive Design'],
+    skills: [
+      { name: 'Team Collaboration' },
+      { name: 'Problem Solving' },
+      { name: 'Communication' },
+      { name: 'Leadership' },
+    ],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-[#0c1222] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
+        {/* Centered Title with Gradient Underline */}
+        <motion.div
+          className="flex justify-center mb-16 relative"
           variants={fadeInUp}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
         >
-          Skills & Expertise
-        </motion.h2>
-        
-        <motion.div 
+          <h2 className="relative text-3xl md:text-4xl font-bold text-center after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-[3px] after:w-40 after:rounded-full after:bg-gradient-to-r after:from-[#1E90FF] after:via-[#00BFFF] after:to-[#1E90FF]">
+  Skills & Expertise
+</h2>
+
+        </motion.div>
+
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={staggerContainer}
           initial="initial"
@@ -61,33 +93,37 @@ export default function Skills() {
             return (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-md"
+                className="bg-[#101a33] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
                 variants={fadeInUp}
-                whileHover={{ 
-                  y: -8,
-                  transition: { duration: 0.3 }
+                whileHover={{
+                  y: -6,
+                  transition: { duration: 0.3 },
                 }}
               >
-                <motion.div 
-                  className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-6"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Icon className="w-6 h-6 text-indigo-600" />
-                </motion.div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{category.category}</h3>
-                
-                <div className="flex flex-wrap gap-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-indigo-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">{category.category}</h3>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <motion.span
+                    <motion.div
                       key={skillIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                      className="flex items-center gap-2 bg-indigo-500/10 text-white px-3 py-2 rounded-full text-sm"
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {skill}
-                    </motion.span>
+                      {skill.icon && (
+                        <img
+                          src={skill.icon}
+                          alt={skill.name}
+                          className="w-4 h-4"
+                        />
+                      )}
+                      <span>{skill.name}</span>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>

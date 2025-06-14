@@ -9,10 +9,10 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-[#0f172a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
+          className="relative text-3xl md:text-4xl font-bold text-center text-white mb-16 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-[3px] after:w-40 after:rounded-full after:bg-gradient-to-r after:from-[#1E90FF] after:via-[#00BFFF] after:to-[#1E90FF]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -33,7 +33,7 @@ export default function Projects() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {projectsData.map((project, index) => (
+          {projectsData.slice(0, 3).map((project, index) => (
             <motion.div
               key={index}
               variants={{
@@ -42,7 +42,7 @@ export default function Projects() {
               }}
               whileHover={{ y: -8 }}
               onClick={() => setSelectedProject(project)}
-              className="group relative bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer"
+              className="group relative bg-slate-800 rounded-xl overflow-hidden shadow-lg cursor-pointer transition duration-300 hover:shadow-blue-500/20"
             >
               <div className="aspect-video overflow-hidden">
                 <img
@@ -53,14 +53,14 @@ export default function Projects() {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm"
+                      className="px-3 py-1 bg-blue-900/40 text-blue-100 rounded-full text-sm"
                     >
                       {tech}
                     </span>
@@ -72,7 +72,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Github className="w-5 h-5" />
@@ -82,7 +82,7 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <ExternalLink className="w-5 h-5" />
