@@ -19,8 +19,10 @@ const skills = [
     skills: [
       { name: 'Node.js', icon: '/icons/node.png' },
       { name: 'Express.js', icon: '/icons/express.png' },
+      { name: 'Next.js', icon: '/icons/next.png' },
       { name: 'Django', icon: '/icons/django.png' },
       { name: 'REST API', icon: '/icons/api.png' },
+      
     ],
   },
   {
