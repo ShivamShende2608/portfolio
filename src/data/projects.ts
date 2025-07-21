@@ -63,5 +63,28 @@ export const projectsData: ProjectItem[] = [
     impact: "Enabled users to get instant basic medical support, reducing unnecessary clinic visits"
   }
 },
+
+ {
+  title: "Weathora",
+  description: "A responsive weather dashboard web app with real-time data, location detection, and city search",
+  image: "weathora.png", // Make sure this image exists in your assets
+  tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "OpenWeatherMap API", ],
+  github: "https://github.com/ShivamShende2608/Weathora", // Replace if repo is private or under different name
+  live: "https://weathora26.netlify.app/",
+  details: {
+    problem: "Lack of intuitive, fast, and visually appealing platforms to track live weather and forecasts by location",
+    solution: "Built a modern weather app with geolocation, search, charting, and dark/light themes to deliver a seamless weather-check experience",
+    features: [
+      "Live weather data via OpenWeatherMap API",
+      "Auto-location detection and geolocation-based weather display",
+      "Hourly and 5-day forecast with interactive charts (Recharts)",
+      "Search bar to check weather in any city",
+      "Favorite cities list with quick access and removal",
+      "Dark/light mode toggle using context and Tailwind CSS",
+      "Fully responsive layout with mobile-first UI"
+    ],
+    impact: "Empowered users with fast, accurate, and visually engaging weather updates, improving usability over traditional weather sites or apps"
+  }
+},
   
 ];
