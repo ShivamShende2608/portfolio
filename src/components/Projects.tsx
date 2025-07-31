@@ -33,7 +33,7 @@ export default function Projects() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {projectsData.slice(0, 4).map((project, index) => (
+          {projectsData.slice(0, 5).map((project, index) => (
             <motion.div
               key={index}
               variants={{
