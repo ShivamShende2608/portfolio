@@ -25,6 +25,32 @@ export const projectsData: ProjectItem[] = [
   },
 },
 
+
+
+{
+  title: "AesthetIQ",
+  description:
+    "An AI-based image editor that allows users to enhance, adjust, and beautify their images through intuitive tools and automation.",
+  image: "aesthetiq.png",
+  tech: ["Next.js", "React.js", "JavaScript", "Tailwind CSS", "Convex"],
+  github: "https://github.com/ShivamShende2608/AesthetIQ",
+  live: "https://aesthet-iq-5yb4.vercel.app/",
+  details: {
+    problem:
+      "Manual image editing can be time-consuming and overwhelming for users without design experience.",
+    solution:
+      "AesthetIQ simplifies image editing by offering easy-to-use tools like brightness, contrast, saturation, cropping, and filters — all in a clean web interface.",
+    features: [
+      "Adjust brightness, contrast, saturation, blur, and sharpness",
+      "Crop and resize images directly in the browser",
+      "Download edited images instantly",
+      "Responsive and minimal UI built with Tailwind CSS",
+    ],
+    impact:
+      "Helps casual users, students, and creators make fast and effective visual edits without needing heavy software like Photoshop.",
+  },
+},
+
   {
   title: "BeastMode",
   description: "A smart workout generation app for all experience levels and environments",
@@ -87,29 +113,9 @@ export const projectsData: ProjectItem[] = [
   }
 },
 
-{
-  title: "AesthetIQ",
-  description:
-    "An AI-based image editor that allows users to enhance, adjust, and beautify their images through intuitive tools and automation.",
-  image: "aesthetiq.png",
-  tech: ["Next.js", "React.js", "JavaScript", "Tailwind CSS", "Convex"],
-  github: "https://github.com/ShivamShende2608/AesthetIQ",
-  live: "https://aesthet-iq-5yb4.vercel.app/",
-  details: {
-    problem:
-      "Manual image editing can be time-consuming and overwhelming for users without design experience.",
-    solution:
-      "AesthetIQ simplifies image editing by offering easy-to-use tools like brightness, contrast, saturation, cropping, and filters — all in a clean web interface.",
-    features: [
-      "Adjust brightness, contrast, saturation, blur, and sharpness",
-      "Crop and resize images directly in the browser",
-      "Download edited images instantly",
-      "Responsive and minimal UI built with Tailwind CSS",
-    ],
-    impact:
-      "Helps casual users, students, and creators make fast and effective visual edits without needing heavy software like Photoshop.",
-  },
-}
+
 
   
 ];
+
+
