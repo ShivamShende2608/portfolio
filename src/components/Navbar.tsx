@@ -23,7 +23,7 @@ export default function Navbar() {
               <a href="https://github.com/ShivamShende2608" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/shivam-shende-a9828423a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+              <a href="https://www.linkedin.com/in/shivam-s-a9828423a/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="mailto:shivamshende2608@gmail.com" className="text-gray-300 hover:text-white">
@@ -66,4 +66,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
