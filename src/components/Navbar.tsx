@@ -49,13 +49,13 @@ export default function Navbar() {
               <a href="#projects" className="text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Projects</a>
               <a href="#contact" className="text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Contact</a>
               <div className="flex space-x-4 pt-2">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+                <a href="https://github.com/ShivamShende2608" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+                <a href="https://www.linkedin.com/in/shivam-s-a9828423a/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="mailto:your.email@example.com" className="text-gray-300 hover:text-white">
+                <a href="mailto:shivamshende2608@gmail%20com" className="text-gray-300 hover:text-white">
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
@@ -66,3 +66,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
